@@ -131,65 +131,65 @@
   <middle>
     <section title="Introduction">
       <t>
-	This memo specifies Network Time Security (NTS), a
-	cryptographic security mechanism for network time
-	synchronization. A complete specification is provided for
-	application of NTS to the client-server mode of the
+        This memo specifies Network Time Security (NTS), a
+        cryptographic security mechanism for network time
+        synchronization. A complete specification is provided for
+        application of NTS to the client-server mode of the
         <xref target="RFC5905">Network Time Protocol (NTP)</xref>.
       </t>
 
       <section title="Objectives">
-	<t>
-	  The objectives of NTS are as follows:
+        <t>
+          The objectives of NTS are as follows:
 
-	  <list style="symbols">
-	    <t>
+          <list style="symbols">
+            <t>
         Identity: Through the use of the X.509 public key infrastructure,
         implementations may cryptographically establish the identity of
         the parties they are communicating with.
-	    </t>
-	    <t>
-	      Authentication: Implementations may cryptographically
-	      verify that any time synchronization packets are
-	      authentic, i.e., that they were produced by an
-	      identified party and have not been modified in transit.
-	    </t>
-	    <t>
-	      Confidentiality: Although basic time synchronization
-	      data is considered non-confidential and sent in the
-	      clear, NTS includes support for encrypting NTP extension
-	      fields.
-	    </t>
-	    <t>
-	      Replay prevention: Client implementations may detect when
-	      a received time synchronization packet is a replay of
-	      a previous packet.
-	    </t>
-	    <t>
-	      Request-response consistency: Client implementations may
-	      verify that a time synchronization packet received from
-	      a server was sent in response to a particular request from
-	      the client.
-	    </t>
-	    <t>
-	      Unlinkability: For mobile clients, NTS will not leak any
-	      information additional to NTP which would permit a
-	      passive adversary to determine that two packets sent
-	      over different networks came from the same client.
-	    </t>
-	    <t>
+            </t>
+            <t>
+              Authentication: Implementations may cryptographically
+              verify that any time synchronization packets are
+              authentic, i.e., that they were produced by an
+              identified party and have not been modified in transit.
+            </t>
+            <t>
+              Confidentiality: Although basic time synchronization
+              data is considered non-confidential and sent in the
+              clear, NTS includes support for encrypting NTP extension
+              fields.
+            </t>
+            <t>
+              Replay prevention: Client implementations may detect when
+              a received time synchronization packet is a replay of
+              a previous packet.
+            </t>
+            <t>
+              Request-response consistency: Client implementations may
+              verify that a time synchronization packet received from
+              a server was sent in response to a particular request from
+              the client.
+            </t>
+            <t>
+              Unlinkability: For mobile clients, NTS will not leak any
+              information additional to NTP which would permit a
+              passive adversary to determine that two packets sent
+              over different networks came from the same client.
+            </t>
+            <t>
               Non-amplification: Implementations (especially server
               implementations) may avoid acting as distributed
               denial-of-service (DDoS) amplifiers by never responding to a
               request with a packet larger than the request packet.
-	    </t>
-	    <t>
-	      Scalability: Server implementations may serve large
-	      numbers of clients without having to retain any
-	      client-specific state.
-	    </t>
-	  </list>
-	</t>
+            </t>
+            <t>
+              Scalability: Server implementations may serve large
+              numbers of clients without having to retain any
+              client-specific state.
+            </t>
+          </list>
+        </t>
       </section>
 
       <section title="Protocol Overview">
@@ -1872,23 +1872,23 @@ Client -----+---------------------------------+----------------->
         to be tracked by its time servers.</t>
       </section>
       <section title="Confidentiality">
-	<t>
-	  NTS does not protect the confidentiality of information in
-	  NTP's header fields. When clients implement <xref
-	  target="I-D.ietf-ntp-data-minimization"/>, client packet
-	  headers do not contain any information which the client
-	  could conceivably wish to keep secret: one field is random,
-	  and all others are fixed. Information in server packet
-	  headers is likewise public: the origin timestamp is copied
-	  from the client's (random) transmit timestamp, and all other
-	  fields are set the same regardless of the identity of the
-	  client making the request.
-	</t>
-	<t>
-	  Future extension fields could hypothetically contain
-	  sensitive information, in which case NTS provides a
-	  mechanism for encrypting them.
-	</t>
+        <t>
+          NTS does not protect the confidentiality of information in
+          NTP's header fields. When clients implement <xref
+          target="I-D.ietf-ntp-data-minimization"/>, client packet
+          headers do not contain any information which the client
+          could conceivably wish to keep secret: one field is random,
+          and all others are fixed. Information in server packet
+          headers is likewise public: the origin timestamp is copied
+          from the client's (random) transmit timestamp, and all other
+          fields are set the same regardless of the identity of the
+          client making the request.
+        </t>
+        <t>
+          Future extension fields could hypothetically contain
+          sensitive information, in which case NTS provides a
+          mechanism for encrypting them.
+        </t>
       </section>
 
 
