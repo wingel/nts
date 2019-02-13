@@ -118,11 +118,11 @@
         Network Time Protocol (NTP).
       </t>
       <t>
-        NTS is structured as a suite of two loosely coupled sub-protocols. 
-        The first (NTS-KE) handles initial authentication and key 
-        establishment over TLS. The second handles encryption and 
-        authentication during NTP time synchronization via extension fields in the 
-        NTP packets, and holds all required state only on the 
+        NTS is structured as a suite of two loosely coupled sub-protocols.
+        The first (NTS-KE) handles initial authentication and key
+        establishment over TLS. The second handles encryption and
+        authentication during NTP time synchronization via extension fields in the
+        NTP packets, and holds all required state only on the
         client via opaque cookies.
       </t>
     </abstract>
@@ -683,7 +683,7 @@ Client -----+---------------------------------+----------------->
             clients SHOULD NOT.
           </t>
         </section>
-      </section>      
+      </section>
 
       <section title="Key Extraction (generally)" anchor="key-extraction">
         <t>
@@ -1034,12 +1034,12 @@ Client -----+---------------------------------+----------------->
                                   |
                                   |
 Server -----------+---------------+-----+----------------------->
-                  ^                      \          
-                 /                        \      
+                  ^                      \
+                 /                        \
   Time request  /                          \   Time response
-  (mode 3)     /                            \  (mode 4)  
-              /                              \   
-             /                                V 
+  (mode 3)     /                            \  (mode 4)
+              /                              \
+             /                                V
 Client -----+---------------------------------+----------------->
             |                                 |
             |                                 |
@@ -1054,7 +1054,7 @@ Client -----+---------------------------------+----------------->
 |- Generate AEAD tag of NTP message|
 |- Add NTS Authentication and      |
 |  Encrypted Extension Fields EF   |
-|- Transmit time request packet    | 
+|- Transmit time request packet    |
 +----------------------------------+]]>
           </artwork>
         </figure>
@@ -1151,7 +1151,7 @@ Client -----+---------------------------------+----------------->
           with <xref target="RFC5905">RFC 5905, Section 7.4</xref> where required.
           A client MAY automatically re-run the NTS-KE protocol upon forced
           disassociation from an NTP server. In that case, it MUST be able to
-          detect and stop looping between the NTS-KE and NTP servers by rate 
+          detect and stop looping between the NTS-KE and NTP servers by rate
           limiting the retries using e.g. exponential retry intervals.
         </t>
         <t>
@@ -1172,7 +1172,7 @@ Client -----+---------------------------------+----------------->
           is able to resume the NTP session without performing renewed NTS-KE
           negotiation.
         </t>
-      </section>      
+      </section>
     </section>
 
     <section title="Suggested Format for NTS Cookies"
@@ -1867,7 +1867,7 @@ Client -----+---------------------------------+----------------->
         reference ID, reference time, stratum, poll).&nbsp; Also, devices that
         respond to NTP control queries could be linked using the information
         revealed by control queries. </t>
-        
+
         <t>Note that the unlinkability objective does not prevent a client device
         to be tracked by its time servers.</t>
       </section>
@@ -1931,7 +1931,7 @@ Client -----+---------------------------------+----------------->
     <references title="Informative References">
       <?rfc include='reference.I-D.draft-ietf-ntp-data-minimization-02.xml'?>
       <?rfc include='reference.RFC.0768.xml'?>
-      <?rfc include='reference.RFC.0793.xml'?>      
+      <?rfc include='reference.RFC.0793.xml'?>
       <?rfc include='reference.RFC.4086.xml'?>
       <?rfc include='reference.RFC.5077.xml'?>
       <?rfc include="reference.RFC.5280.xml'?>
